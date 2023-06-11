@@ -1,0 +1,556 @@
+<!------------------------------------
+    Page de reservation
+    Auteur: Melina Rochon
+    Numero etudiant: 300238765
+    Date: Juin 2023
+-------------------------------------->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Ajout de Bootstrap au projet -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- Icones de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <!-- Autre bibliotheque -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        
+        <link rel="stylesheet" href="styles.css">
+        
+        <!-- Titre du site web -->
+        <title>The Beauty Salon Spa</title>
+
+        <!-- Icone affichee sur le fureteur -->
+        <link rel="icon" href="/images/logo.png">
+    </head>
+
+
+    <body onload="loadServices()">
+
+        <!-- Barre de navigation -->
+        <nav class="navbar sticky-top navbar-expand-lg p-2 " style="background-color: #9673C1; font-size: 14px; color: white;">
+            <div class="container-xxl p-0" >
+
+                <!-- Logos -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                </a>
+
+                <!-- toggle button for mobile navbar -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Barre de navigation -->
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav" style=" padding-left: 10px; padding-right: 10px;">
+                    <div class="header-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/index.html" class="nav-link" style="color: black;">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about.html" class="nav-link" style="color: black;">À Propos</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="/services.html" class="nav-link" style="color: black;">Nos Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/team.html" class="nav-link" style="color: black;">Notre équipe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact.html" class="nav-link" style="color: black;">Contactez-nous</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/gallery.html" class="nav-link" style="color: black;">Gallerie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/booking.html" class="nav-link" style="color: white;">Réservez</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Reservation -->
+        <section id="bookingHead">
+            <h4 class="display-4 text-center pt-5">Réservation</h4> 
+        </section>
+   
+        <div class="wrapper">
+            <form id="form" action="#">
+                <!-- https://www.youtube.com/watch?v=JFfVilQSius -->
+
+                <!-- Barre de navigation pour effectuer la reservation -->
+                <div class="progressbar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-step progress-step-active"><i class="bi bi-list-task"></i>
+                        <strong class="ProgressBar-stepLabel">Services</strong>
+                    </div>
+                    <div class="progress-step" data-title="Step 2: Select Date & Time"><i class="bi bi-calendar"></i>
+                        <strong class="ProgressBar-stepLabel">Date & Heure</strong>
+                    </div>
+                    <div class="progress-step" data-title="Step 3: Personal Info"><i class="bi bi-person-badge"></i>
+                        <strong class="ProgressBar-stepLabel">Information personnelle</strong>
+                    </div>
+                    <div class="progress-step" data-title="Step 4: Payment Info"><i class="bi bi-credit-card"></i>
+                        <strong class="ProgressBar-stepLabel">Confirmation</strong>
+                    </div>
+                </div>
+
+                <!-- Etapes pour faire la reservation -->
+                <!-- Etape 1: Selection des services et du technicien -->
+                <div class="form-step form-step-active">
+                    <br><br>
+
+                    <!-- Titre de la section service -->
+                    <div class="serviceHead text-center">
+                        <h6 class="display-6">Sélectionnez un technicien et un service</h4>
+                        <p class="lead">Veuillez sélectionner un technicien.</p>  
+                    </div>
+
+                    <!-- Liste deroulante qui propose les differents techniciens-->
+                    <div class="comboBoxTechnicien text-center pb-3">
+                        <div class="mb-3 mt-1 form-group">
+                            <select name="technicien" id="technicien" class="rounded">
+                                <option value="" selected disabled hidden>Sélectionnez un technicien</option>
+                                <option value="Jane">Jane</option>
+                                <option value="Zoé">Zoé</option>
+                                <option value="Lana">Lana</option>
+                                <option value="Vincent">Vincent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Sous-titre -->
+                    <div class="serviceHead text-center pt-3">
+                        <p class="lead">Veuillez sélectionner un ou plusieurs services de votre choix.</p>  
+                    </div>
+                    
+                    <!-- Section qui contient tout les services offerts -->
+                    <div class="container serviceGroup border rounded">           
+                        <div class="row mx-auto pt-4 pb-4 pe-0">
+                            <div class="col-3" id="tabServices">
+
+                                <!-- Groupe de boutons qui montre les differents services offerts -->
+                                <div class="btn-group-vertical pb-2 pe-2 ps-2 " role="group">
+                                    <button type="button" class="btn services select" id="btnNails" onclick="afficheServicesOnglesNaturels(true)">Ongles naturels</button>
+                                    <button type="button" class="btn services" id="btnArtificials" onclick="afficheServicesOnglesArtificiels(true)" >Ongles artificiels</button>
+                                    <button type="button" class="btn services" id="btnKidsNails" onclick="afficheSericesEnfants(true)">Services pour enfants</button>
+                                    <button type="button" class="btn services" id="btnAutreSoins" onclick="afficheAutresServices(true)">Autres soins</button>
+                                </div>
+                                <br>
+                                
+                                <!-- Section qui affiche les differents services selectionnes-->
+                                <div class="pe-2 ps-2">
+                                    <div class="mx-auto p-2 lead border">
+                                        <div id="selectionServices"><strong>Service(s) sélectionné(s)</strong></div>
+
+                                        <!-- Services qui sont selectionnes sont mis dans une liste qui est cree au debut 
+                                            du processus de la reservation-->
+                                        <div id="servicesSelectionne" class="mx-auto pt-2"></div> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col">
+                                <!-- Cartes des services d'ongles naturels -->
+                                <div id="cardsNaturels" style="display: block;"></div>
+            
+                                <!-- Cartes des services d'ongles artificiels-->
+                                <div id="cardsArtificiels" style="display: none;"></div>
+            
+                                <!-- Cartes des services offerts pour les enfants -->
+                                <div id="cardsKids" style="display: none;"></div>
+            
+                                <!-- Cartes de autres services offerts -->
+                                <div id="autreSoins" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br><br>
+
+                    <!-- Groupe de boutons qui passe a l'etape suivante -->
+                    <div class="container mx-auto text-center">
+                        <div class="btns-group mx-auto">
+                            <a href="#" class="btn next-step">Passer à l'étape suivante</a>
+                        </div> 
+                    </div>
+                </div>
+
+
+                <!-- Etape 2: Selection d'une date et heure -->
+                <div class="form-step">
+
+                    <!-- Titre de la section date et heure -->
+                    <div class="dateHeureHead text-center">
+                        <h6 class="display-6">Sélectionnez une date et heure</h4>
+                        <p class="lead">Veuillez sélectionner une date et une heure disponible afin de poursuivre la réservation.</p>    
+                    </div>
+
+                    
+                    <!-- Section ou les dates sont sauvegardee -->
+                    <div class="date">
+                        
+                        <div class="row">
+                            <div class="col col-sm-12">
+                                <!-- Entree pour choisir une date -->
+                                <div class="datePicker form-group">
+                                    <label for="date">Sélectionner une date</label>
+                                    <input type="date" id="date" class="form-control" name="date" oninput="getAvailableTimeSlots(document.getElementById('date').value)" onclick="this.showPicker()" required>
+                                </div>
+                            </div>
+
+                            <!-- Container qui affiche toutes les heures disponibles-->
+                            <div class="col col-sm-12">
+                                <div class="dispoTime mb-4" id="dispoTime" style="display: none;">
+                                    <p class="lead mb-1 mt-3 text-center">Temps disponibles</p>
+                                    <div class="card-body">
+
+                                        <!-- Heures de disponibilitées pour la semaine -->
+                                        <div class="weekdaysHours" id="weekdaysHours">
+                                            <div class="row text-center mx-0">
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">7h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">7h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">8h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">8h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">17h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">17h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">18h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">18h30</div></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Heures de disponibilitées pour le samedi -->
+                                        <div class="saturdayHours" id="saturdayHours">
+                                            <div class="row text-center mx-0">
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">8h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">17h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">17h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">18h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">18h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">19h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">19h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">20h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">20h30</div></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Heures de disponibilitées pour le dimanche -->
+                                        <div class="sundayHours" id="sundayHours">
+                                            <div class="row text-center mx-0">
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">8h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">9h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">10h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">11h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">12h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">13h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">14h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">15h30</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h00</div></div>
+                                                <div class="col-md-2 col-4 my-1 px-2"><div class="cell py-1">16h30</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Affiche la date et l'heure du rendez-vous, selon la date et l'heure selectionnee par l'utilisateur -->
+                                    <div class="dateTime mt-5 mb-1 lead text-center " id="dateTime">Votre rendez-vous sera le :</div>
+                                    <div class="selectedDateTime display-6 text-center" id="selectedDateTime"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <!-- Groupe de boutons qui passe a l'etape suivante -->
+                        <div class="btns-group">
+                            <a href="#" class="btn previous-step">Retour à l'étape précédente</a>
+                            <a href="#" class="btn next-step">Passer à l'étape suivante</a>
+                        </div>
+                    </div>  
+                </div>
+
+                
+                <!-- Etape 3: Information personnelle -->
+                <div class="form-step">
+
+                    <!-- Titre de la section information personnelle -->
+                    <div class="infoPersonnelHead text-center">
+                        <h6 class="display-6">Information personnelle</h4>
+                        <p class="lead">Veuillez entrer votre information personnelle afin de terminer la réservation.</p>    
+                    </div>
+
+                    <!-- Container pour les infos de l'utilisateur-->
+                    <div class="infoPersonnelle mx-auto">
+                        <form> 
+                            <div class="row mt-2 mb-2">
+                                <div class="col">
+                                    <!-- Entree pour le prenom -->
+                                    <label for="username" class="form-label">Prénom *</label>
+                                    <div class="mb-3 mt-1 form-group">
+                                        <span class="bi bi-person form-control-icon"></span>
+                                        <input type="text" name="username" id="prenom" class="form-control" placeholder="Prénom" required>
+                                    </div>
+                                </div>
+        
+                                <div class="col">
+                                    <!-- Entree pour le nom de famille -->
+                                    <label for="email" class="form-label">Nom de famille *</label>
+                                    <div class="mb-3 mt-1 form-group">
+                                        <span class="bi bi-person-badge form-control-icon"></span>
+                                        <input type="text" name="lastName" id="nomFamille" class="form-control" placeholder="Nom de famille" required>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="row mt-2 mb-2">
+                                <div class="col">
+                                    <!-- Entree pour le courriel -->
+                                    <label for="email" class="form-label">Courriel *</label>
+                                    <div class="mb-3 mt-1 form-group">
+                                        <span class="bi bi-envelope form-control-icon"></span>
+                                        <input type="email" name="email" id="courriel" class="form-control" placeholder="exemple@exemple.com" required>
+                                    </div>
+                                </div>
+        
+                                <div class="col">
+                                    <!-- Entree pour le numero de telephone -->
+                                    <label for="phone" class="form-label">Téléphone *</label>
+                                    <div class="mb-3 mt-1 form-group">
+                                        <span class="bi bi-telephone form-control-icon my-auto"></span>
+                                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="111-111-1111" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Groupe de boutons qui passe a l'etape suivante -->
+                            <div class="btns-group">
+                                <a href="#" class="btn previous-step">Retour à l'étape précédente</a>
+                                <a href="#" class="btn next-step" onclick="confirmationReservation()">Placez ma réservation</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            
+                <!-- Etape 4: Confirmation de la reservation -->
+                <div class="form-step">
+
+                    <!-- Titre de la section de confirmation-->
+                    <h6 class="display-6 text-center">Confirmation de la réservation</h4>
+
+                    <!-- Container qui affiche toute information personne de l'utilisateur afin de confirmer 
+                        la reservation de celui-ci-->
+                    <div class="container ps-5 pe-5">
+
+                        <!-- Prenom et phrase de confirmation de la reservation -->
+                        <p class="lead" id="prenomReservation"></p>
+                        <p class="lead" id="confirmationReservation"></p>
+
+                        <!-- Details de la reservation, info importante sur le rendez-vous -->
+                        <h6 class="display-6 pt-3">Détails de la réservation</h6> 
+                        <p class="lead" id="numeroReservation"></p>
+                        <p class="lead" id="nomFamilleReservation"></p>
+                        <p class="lead" id="courrielReservation"></p>
+                        <p class="lead" id="telephoneReservation"></p>
+                        <p class="lead" id="dateHeureReservation"></p>
+                        <p class="lead" id="technicienReservation"></p>
+                        <p class="lead">Service(s) sélectionné(s) : </p>
+                        <div class="ps-3 w-50 pb-1">
+                            <p class="lead ms-3" id="serviceReservation"></p>
+                        </div>
+                        
+                        <!-- Bouton qui permet de faire une autre reservation -->
+                        <a type="button" class="btn" href="/booking.html">Faire une autre réservation</a>
+                        
+                        <!-- Bouton qui permet d'annuler la réservation -->
+                        <div id="annule" class="pt-5">
+                            <p class="lead">Pour annuler votre réservation maintenant : 
+                                <button type="button" class="btn retour" data-toggle="modal" data-target="#exampleModal" data-backdrop="static" data-keyboard="false" onclick="cancelReservation()">
+                                Cliquez ici
+                                </button>
+                                <br>
+                                Si vous voulez annuler votre réservation plus tard, veuillez nous appeler à ce numéro : 
+                                <a href="tel:+1999-876-5432">(999)-876-5432</a>  
+                            </p>
+                            
+                           <!-- Modal -->
+                           <!-- Le modal est appele seulement si l'utilisateur veux annuler sa réservation -->
+                            <div class="modal" id="exampleModal" >
+                                <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title display-6" id="exampleModalLabel">Votre réservation a été annulée avec <strong>succès</strong></h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="prenomCancelReservation" class="lead"></p>
+                                        <p id="courrielCancelReservation" class="lead"></p>
+                                        <p class="lead">
+                                            <br>
+                                            Si vous avez des questions, n'hésitez pas à nous rejoindre par téléphone : <a href="tel:+1999-876-5432">(999)-876-5432</a>  
+                                            <br>
+                                            <br>
+                                            -Équipe d'OPAL
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    
+                                        <!-- Bouton pour ramener l'utilisateur à la page d'acceuil -->
+                                    <a href="/index.html" type="button" class="btn retour mx-auto">Retour à la page d'accueil</a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>            
+            </form>
+            <br><br>      
+        </div>     
+    </body>
+
+
+    <!-- Pied de pages du site -->
+    <footer>
+        
+        <!--Grid row-->
+        <div class="row">
+            <div class="col-12 col-md-4">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                    <hr> <!-- Separateur -->
+                </a>
+
+                <!-- Informations de contacts -->
+                <div class="info_footer">
+                    <p><i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                        800 King Edward Ave, Ottawa, ON K1N 6N5
+                        <br>
+                        <a href="tel:+1999-876-5432">
+                            <i class="bi bi-telephone" style="margin-right: 5px;"></i>
+                            (999)-876-5432
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!--Barre de navigation du pied de page -->
+            <div class="col-12 col-md-4 mt-3 text-center">
+                <div class="footer_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/about.html" class="nav-link" style="padding: 0px;">À Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/services.html" class="nav-link" style="padding: 0px;">Nos Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/team.html" class="nav-link" style="padding: 0px;">Notre équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html" class="nav-link" style="padding: 0px;" >Contactez-nous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/gallery.html" class="nav-link" style="padding: 0px;">Gallerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" style="padding: 0px;">Réservez maintenant</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <!-- Heures d'ouvertures & medias -->
+            <div class="col-12 mt-3 col-md-4">
+                <div class="ouvertures">
+                    <p class="lead"><strong>Heures d'ouvertures</strong>
+                        <br>
+                        Lundi - Vendredi : 7h00 - 19h00
+                        <br>
+                        Samedi : 8h00 - 21h00
+                        <br>
+                        Dimanche : 9h00 - 17h00
+                    </p>
+                    <hr >
+            
+                    <!-- Medias sociaux -->
+                    <div class="media_sociaux">
+                        <a href="https://www.pinterest.ca/"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/?lang=en-ca"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- Copyrights -->
+        <div class="row">
+            <p class="lead copyrights">
+                © 2023 OPAL.  All rights reserved.
+            </p>
+        </div>
+     
+    </footer>
+
+    <!-- Scripts utiles -->
+    <script src="scripts.js"></script>
+    <script src="calendarScript.js"></script>
+
+</html>

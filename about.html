@@ -1,0 +1,200 @@
+<!------------------------------------
+    Page de a propos 
+    Auteur: Melina Rochon
+    Numero etudiant: 300238765
+    Date: Juin 2023
+-------------------------------------->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Ajout de Bootstrap au projet -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        
+        <!-- Icones de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
+        <!-- Autre bibliotheque -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        
+        <!-- Titre du site web -->
+        <title>OPAL salon pour ongles</title>
+
+        <!-- Icone affichee sur le fureteur -->
+        <link rel="icon" href="/images/logo.png">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+
+    <body>
+
+        <!-- Barre de navigation -->        
+        <nav class="navbar sticky-top navbar-expand-lg p-2 " style="background-color: #9673C1; font-size: 14px; color: white;">
+            <div class="container-xxl p-0" >
+                
+                <!-- Logos -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                </a>
+
+                <!-- toggle button for mobile navbar -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Barre de navigation -->
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav" style=" padding-left: 10px; padding-right: 10px;">
+                    <div class="header-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/index.html" class="nav-link" style="color: black;">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" style="color: white;">À Propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/services.html" class="nav-link" style="color: black;">Nos Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/team.html" class="nav-link" style="color: black;">Notre équipe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact.html" class="nav-link" style="color: black;">Contactez-nous</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/gallery.html" class="nav-link" style="color: black;">Gallerie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/booking.html" class="nav-link" style="color: black;">Réservez</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Image et tire de la page du site -->
+        <section id="introAbout">
+            <img class="img-fluid" src="/images/about.png" alt="">
+            <div class="jumbotron about jumbotron-fluid" >
+                <h4 class="display-4">À Propos</h4>
+            </div>
+        </section> 
+            
+        <!-- Affiche le a propos de la compagnie -->
+        <section id="aboutUs">
+
+            <div class="container justify-content-center pt-5 pb-5">
+                <h6 class="display-6">Qui sommes-nous?</h6>
+                <p class="lead">Bienvue chez OPAL, salon pour ongles.</p>
+                <p>
+                    Chez OPAL de salon pour ongles, nous sommes engagés de vous offrir un service de qualité et un d'endroit 
+                    sécuritaire pour toute notre clientèle. Situés au plein cœur de la ville d'Ottawa, nous sommes fiers 
+                    d'offrir nos clients des sessions de qualité et abordables. 
+                    <br><br>
+                    Notre établissement offre à notre clientèle un environnement calme, moderne et sanitaire. Nous utilisons 
+                    seulement des chaînes de produits sécuritaires, testés et 100% naturels et qui sont utilisés dans l'industrie. 
+                    L'équipement est bien stérilisé et désinfecté après chaque utilisation. Toute l'équipe est bien entraînée 
+                    pour suivre les protocoles mis en place et de mettre l'hygiène du client à leur priorité primaire.
+                    <br><br><br>
+                    - Équipe OPAL                
+                </p>
+            </div>
+        </section>
+    </body>
+
+
+   <!-- Pied de pages du site -->
+   <footer>
+            
+        <!--Grid row-->
+        <div class="row">
+            <div class="col-12 col-md-4">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                    <hr> <!-- Separateur -->
+                </a>
+
+                <!-- Informations de contacts -->
+                <div class="info_footer">
+                    <p><i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                        800 King Edward Ave, Ottawa, ON K1N 6N5
+                        <br>
+                        <a href="tel:+1999-876-5432">
+                            <i class="bi bi-telephone" style="margin-right: 5px;"></i>
+                            (999)-876-5432
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!--Barre de navigation du pied de page -->
+            <div class="col-12 col-md-4 mt-3 text-center">
+                <div class="footer_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" style="padding: 0px;">À Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/services.html" class="nav-link" style="padding: 0px;">Nos Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/team.html" class="nav-link" style="padding: 0px;">Notre équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html" class="nav-link" style="padding: 0px;" >Contactez-nous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/gallery.html" class="nav-link" style="padding: 0px;">Gallerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/booking.html" class="nav-link" style="padding: 0px;">Réservez maintenant</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <!-- Heures d'ouvertures & medias -->
+            <div class="col-12 mt-3 col-md-4">
+                <div class="ouvertures">
+                    <p class="lead"><strong>Heures d'ouvertures</strong>
+                        <br>
+                        Lundi - Vendredi : 7h00 - 19h00
+                        <br>
+                        Samedi : 8h00 - 21h00
+                        <br>
+                        Dimanche : 9h00 - 17h00
+                    </p>
+                    <hr >
+            
+                    <!-- Medias sociaux -->
+                    <div class="media_sociaux">
+                        <a href="https://www.pinterest.ca/"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/?lang=en-ca"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- Copyrights -->
+        <div class="row">
+            <p class="lead copyrights">
+                © 2023 OPAL.  All rights reserved.
+            </p>
+        </div>
+    
+    </footer>
+</html>

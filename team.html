@@ -1,0 +1,278 @@
+<!------------------------------------
+    Page de l'equipe (professionels)
+    Auteur: Melina Rochon
+    Numero etudiant: 300238765
+    Date: Juin 2023
+-------------------------------------->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Ajout de Bootstrap au projet -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        
+        <!-- Icones de bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
+        <!-- Autre bibliotheque -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        
+        <!-- Titre du site web -->
+        <title>OPAL salon pour ongles</title>
+
+        <!-- Icone affichee sur le fureteur -->
+        <link rel="icon" href="/images/logo.png">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+
+    <body>
+
+        <!-- Barre de navigation -->
+        <nav class="navbar sticky-top navbar-expand-lg p-2 " style="background-color: #9673C1; font-size: 14px; color: white;">
+            <div class="container-xxl p-0" >
+                                
+                <!-- Logos -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                </a>
+                
+                <!-- toggle button for mobile navbar -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Barre de navigation -->
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav" style=" padding-left: 10px; padding-right: 10px;">
+                    <div class="header-nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/index.html" class="nav-link" style="color: black;">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about.html" class="nav-link" style="color: black;">À Propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/services.html" class="nav-link" style="color: black;">Nos Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" style="color: white;">Notre équipe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact.html" class="nav-link" style="color: black;">Contactez-nous</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/gallery.html" class="nav-link" style="color: black;">Gallerie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/booking.html" class="nav-link" style="color: black;">Réservez</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Image et titre principal de la page -->
+        <section id="introEquipe">
+            <img class="img-fluid" src="/images/notreEquipe.png" alt="">
+            <div class="jumbotron team jumbotron-fluid" >
+                <h4 class="display-4">Notre Équipe</h4>
+            </div>
+        </section> 
+            
+        <!-- Affiche les differents professionels de la compagnie -->
+        <section id="notreEquipe">
+            <div class="container">
+
+                <!-- membre 1 -->
+                <div class="row justify-content-start">
+                                        
+                    <!-- Image du membre 1 de l'equipe -->
+                    <div class="col col-md-4">
+                        <img src="/images/notreEquipe/equipe1.png" class="float-end" alt="">
+                    </div>
+                    <div class="col">
+                        <h6 class="display-6">Jane</h6>
+                        <p class="lead">Propriétaire & Esthéticienne</p>
+
+                        <!-- Description du membre de l'equipe -->
+                        <p>Grandie dans une petite ville et déménagée à Ottawa en 1997, Jane est une diplômée du programme d'esthétique du 
+                            collège algonquin. Elle a développé un amour pour les ongles dès l'âge de 8 ans, lorsque sa grand-mère lui peignait 
+                            les ongles, lorsqu'elle lui rendait visite. Plus tard dans son parcours, elle a trouvé un emploi dans un spa où elle 
+                            a travaillé pendant 8 ans avant d'ouvrir son propre commerce, OPAL salon pour ongles. Passionnée de la nature, dans 
+                            son temps libre, Jane aime prendre des marches et faire des activités extérieures avec son mari et leurs deux chiens.
+                        </p>
+                        <!-- Bouton pour réservez avec Jane -->
+                        <!-- <div class="text-center">
+                            <a href="/booking.html" class="btn" onclick="reserverEstheticien('Jane')">Réservez avec Jane</a>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <!-- membre 2-->
+                <div class="row justify-content-end">
+                    <div class="col text-end">
+                        <h6 class="display-6">Zoé</h6>
+                        <p class="lead">Esthéticienne</p>
+
+                        <!-- Description du membre de l'equipe -->
+                        <p>Née et grandie à Kingston, ON, Zoé a réalisé qu'elle avait une passion pour les ongles lors de sa participation dans 
+                            un programme coop, au secondaire, sur l'esthétique. Suivant son parcours scolaire, elle a déménagé à London, ON, afin 
+                            de poursuivre des études en esthétique. Elle a gradué l'école «Pebec School of Esthetics» en 1999. Dans les années qui 
+                            ont suivi, elle a travaillé dans plusieurs salons pour ongles avant de joindre notre équipe chez OPAL il y a 5 ans. Dans 
+                            son temps libre, Zoé aime peinturer.  
+                        </p>
+                    </div>
+                                        
+                    <!-- Image du membre 2 de l'equipe -->
+                    <div class="col col-md-4">
+                        <img src="/images/notreEquipe/equipe2.png" class="float-start" alt="">
+                    </div>
+                    
+                </div>
+
+                <!-- membre 3 -->
+                <div class="row">
+                        
+                    <!-- Image du membre 3 de l'equipe -->
+                    <div class="col col-md-4 justify-content-start">
+                        <img src="/images/notreEquipe/equipe3.png" class="float-end" alt="">
+                    </div>
+                    <div class="col">
+                        <h6 class="display-6">Lana</h6>
+                        <p class="lead">Esthéticienne</p>
+
+                        <!-- Description du membre de l'equipe -->
+                        <p>Déménagée de l'Europe en 2010 afin de poursuivre ces études postsecondaires en communication internationale, Lana 
+                            est tombée en amour avec la nature et le mode de vie du pays. En grondant de l'Université d'Ottawa, elle décide 
+                            de se rediriger en esthétique. Elle gradue un an plus tard de l'école de l'hospitalité et du tourisme du collège 
+                            algonquin en esthétique.  En 2013, Lana déménage en Europe pour un bref séjour avant de se trouver un emploi dans 
+                            un salon pour ongles à Ottawa. Elle y travaille 5 ans avant de joindre l'équipe chez OPAL, il y a maintenant 2 ans. 
+                            À l'extérieur des heures de travail, elle est mère de 2 enfants. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- membre 4 -->
+                <div class="row justify-content-end">
+                    <div class="col text-end">
+                        <h6 class="display-6">Vincent</h6>
+                        <p class="lead">Esthéticien</p>
+
+                        <!-- Description du membre de l'equipe -->                       
+                        <p>Vincent est un esthéticien, qui travaille pour OPAL depuis 3 ans. Dès un jeune âge, il a développé une passion pour 
+                            la peinture. À l'âge de 16 ans, sa famille a déménagé à Toronto où il développe un amour pour la manucure et la 
+                            pédicure. Comme emploi d'été, Vincent travaille dans un salon d'ongle du centre-ville de Toronto, où il approfondit 
+                            ces connaissances pour l'art de l'esthétique. Il décide de poursuivre ces études postsecondaires à l'école LaSalle 
+                            à Montréal et se certifie en esthétique. En 2016, Vincent redéménage à Ottawa, où il travaille dans un salon d'ongle 
+                            avant de joindre notre équipe. 
+                        </p>
+                    </div>
+
+                    <!-- Image du membre 4 de l'equipe -->
+                    <div class="col col-md-4">
+                        <img src="/images/notreEquipe/equipe5.png" class="float-start" alt="">
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </body>
+
+
+    <!-- Pied de pages du site -->
+    <footer>
+        
+        <!--Grid row-->
+        <div class="row">
+            <div class="col-12 col-md-4">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/images/logo.png" width="70" height="70" alt="">
+                    <img src="/images/OPAL_salon.png" width="130" height="50" alt="" style="margin-left:20px;">
+                    <hr> <!-- Separateur -->
+                </a>
+
+                <!-- Informations de contacts -->
+                <div class="info_footer">
+                    <p><i class="bi bi-geo-alt" style="margin-right: 5px;"></i>
+                        800 King Edward Ave, Ottawa, ON K1N 6N5
+                        <br>
+                        <a href="tel:+1999-876-5432">
+                            <i class="bi bi-telephone" style="margin-right: 5px;"></i>
+                            (999)-876-5432
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!--Barre de navigation du pied de page -->
+            <div class="col-12 col-md-4 mt-3 text-center">
+                <div class="footer_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/about.html" class="nav-link" style="padding: 0px;">À Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/services.html" class="nav-link" style="padding: 0px;">Nos Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" style="padding: 0px;">Notre équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html" class="nav-link" style="padding: 0px;" >Contactez-nous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/gallery.html" class="nav-link" style="padding: 0px;">Gallerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/booking.html" class="nav-link" style="padding: 0px;">Réservez maintenant</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <!-- Heures d'ouvertures & medias -->
+            <div class="col-12 mt-3 col-md-4">
+                <div class="ouvertures">
+                    <p class="lead"><strong>Heures d'ouvertures</strong>
+                        <br>
+                        Lundi - Vendredi : 7h00 - 19h00
+                        <br>
+                        Samedi : 8h00 - 21h00
+                        <br>
+                        Dimanche : 9h00 - 17h00
+                    </p>
+                    <hr >
+            
+                    <!-- Medias sociaux -->
+                    <div class="media_sociaux">
+                        <a href="https://www.pinterest.ca/"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/?lang=en-ca"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- Copyrights -->
+        <div class="row">
+            <p class="lead copyrights">
+                © 2023 OPAL.  All rights reserved.
+            </p>
+        </div>
+     
+    </footer>
+
+</html>

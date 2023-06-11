@@ -1,0 +1,541 @@
+/* Mélina Rochon, 300238765 */
+/* Cette page CSS contient tous les détails sur les styles */
+
+/* STYLES POUR LE DOCUMENT */
+html {
+	height: 100%
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+nav .nav-link {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* AUTRES STYLES */
+/* Grandeur maximale des cartes */
+.card {
+    max-width: 650px;
+}
+
+/* Arriere plan */
+#notreEquipe, #aboutUs, #services {
+    background-color: #FAFAF5;
+}
+
+/* Laisse de l'espace dans les inputs */
+.form-group .form-control {
+    padding-left: 2.375rem;
+}
+
+
+
+/* BOUTONS DEFAUT */
+/* Style des boutons */
+.btn {
+    background-color: #6F48A0; 
+    color: white; 
+    font-size: 14px;
+}
+
+/* Bouton reserver sur la page d'accueil */
+.btn.btnReserve {
+    margin-top: 10px;
+}
+
+/* Hover d'un bouton */
+.btn:hover {
+    background-color: #9673C1;
+    color: white;
+    cursor: pointer; /* curseur */
+}
+
+
+
+/****************************************
+BAS DE PAGE                             *
+****************************************/
+/* BAS DE PAGE (FOOTER) */
+footer {
+    background-color: #6D6D6D;
+    padding: 20px 30px;
+}
+
+/* Barre de separation en dessous du logo */
+footer .row .navbar-brand hr {
+    width:100%;
+    height: 3px;
+    color: white;
+    opacity: 1;
+    margin: 8px 0px;
+}
+
+/* Alignement du texte pour heures d'ouvertures */
+footer .col-md-4 p.lead {
+    text-align: right;
+}
+
+/* Barre de separation en dessous des heures d'ouvertures */
+.ouvertures hr {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    width:60%; 
+    height: 3px;
+    color: white; 
+    opacity: 1; /* opaque */
+    /* aligne vers la gauche */
+    margin-inline-start: auto; 
+    margin-inline-end: 0px;
+}
+
+/* Icones de medias sociaux sur le bas de page */
+.media_sociaux {
+    text-align: right;
+}
+
+/* Icones des medias sociaux */
+.media_sociaux i {
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+/* Enleve l'espace entre la composante p, pour les 
+    heures d'ouvertures et la ligne qui agit comme 
+    separateur*/
+footer p {
+    margin-bottom: 0px;
+}
+
+/* Droit d'auteur */
+footer .row p.copyrights {
+    text-align: center;
+    color: white;
+    font-size: 10px; /* grandeur de l'ecriture */
+    margin-top: 8px; /* laisse de l'espace */
+}
+
+/* Police d'ecriture du bas de page */
+.info_footer p, i, .ouvertures p.lead, .footer_nav, .info_footer p a{
+    font-size: 12px;
+    font-style: normal;
+    color: white;
+    text-decoration: none; /* aucun underline */
+}
+
+
+
+/****************************************
+PAGE D'ACCUEIL                          *
+****************************************/
+/* PAGE D'ACCUEIL */
+/* Section qui affiche les services offerts */
+section#service {
+    background-color: #FAFAF5; /* couleur de l'arriere plan */
+}
+
+/* Icones de faits interessant sur la compagnie */
+#facts p {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* Icones de faits sur la compagnie */
+#factsCard {
+    background-color: #FAFAF5;
+}
+
+/* Texte & logo qui se trouve sur l'image principale des pages */
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* aligne les elements */
+    width: 500px;
+    position: absolute;
+
+    /* Position du jumbotron */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Grandeur de police d'ecriture pour h4 */
+#service h4 {
+    font-weight: 320;
+    font-size: 26px;
+}
+
+
+
+/****************************************
+BARRE DE NAVIGATION                     *
+****************************************/
+/* BARRE DE NAVIGATION */
+.header-nav .nav-item:hover {
+    background-color: #6F48A0;
+    cursor: pointer;
+    color: white;
+    border-radius: 0.375rem;
+}
+
+
+
+/****************************************
+PAGE DE RESERVATION                     *
+****************************************/
+/* Separe les etapes de reservation en page */
+/* Cache les etapes par defaut */
+.form-step {
+    display: none;
+}
+
+/* Etape active est affichee */
+.form-step-active {
+    display: block;
+}
+
+/* Alignement des icones dans les inputs */
+#contactForm .bi, .infoPersonnelle .bi {
+    padding: 16px 0px 15px 0px;
+    color: #6F48A0;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+    margin: 10 auto; /* donne un espace plus restreint */ 
+    padding: 2em 0 3em; /* pour la barre dans l'arriere plan */
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* donne de l'espace */
+    max-width: 1000px; 
+}
+
+/* Grandeur des boutons ajouter/retirer */
+button.btn.btn-sm.addBtn, button.btn.btn-sm.rmvBtn {
+    max-width: 80px;
+    height: 30px;
+    background-color: white;    
+}
+
+/* Bouton ajouter */
+button.btn.btn-sm.addBtn {
+    border-color: #6F48A0;
+    outline-color: #6F48A0;
+    color: #6F48A0; /* couleur texte */
+}
+
+/* Bouton retirer */
+button.btn.btn-sm.rmvBtn{
+    border-color: #dc3545;
+    outline-color: #dc3545;
+    color: #dc3545; /* couleur texte */
+}
+
+/* Hover, bouton ajouter */
+button.btn.btn-sm.addBtn:hover {
+    background-color: #6F48A0;
+    color: white; /* couleur texte */
+}
+
+/* Hover, bouton retirer */
+button.btn.btn-sm.rmvBtn:hover {
+    background-color: #dc3545;
+    color: white; /* couleur texte */
+}
+
+/* Couleur de l'etape dans la barre de progression */
+.progress-step.progress-step-active {
+    background-color: #6F48A0;
+}
+
+/* Barre de progression */
+.progressbar::before, .progress {
+    content: "";
+    height: 5px;
+    position: absolute;
+    top: 60px; /* emplacement de la barre sur axe des y */
+    width: 100%;
+
+    /* couleur de la barre en arriere plan */
+    background-color: #D9D9D9; 
+}
+
+/* Barre de progres lorsque etape completee */
+.progress {
+    background-color: #6F48A0;
+    width: 0%;
+}
+
+.progress-step {
+    width: 60px;
+    height: 60px;
+    background-color: #ceced1;
+    border-radius: 50%; /* forme un cercle */
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all .25s ease-out; /* fade-in/fade-out */
+}
+
+/* Boutons qui passe a la prochaine etape */
+#form .previous-step, #form .next-step {
+	color: white;
+	border: 0 none;
+	border-radius: 0px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px 10px 0px;
+	float: right;
+    width: 300px;
+}
+
+/* Hover et focus des boutons d'etapes  */
+#form .next-step:hover,
+#form .next-step:focus, #form .previous-step:hover, #form .previous-step:focus {
+	background-color: #9673C1;
+}
+
+/* Aligne les boutons de prochaines etapes */
+/* Seulement utiliser sur l'etape 1 */
+.btns-group.mx-auto {
+    display: flex;
+    gap: 1.5rem;
+    padding:0px 12px;
+    justify-content: center;
+}
+
+/* Aligne les boutons de prochaines etapes */
+.btns-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* Cartes - aligne le prix */
+p.card-text.price {
+    margin-bottom: 0px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* Labels des etapes de la barre de progression */
+.ProgressBar-stepLabel {
+    text-align: center;
+    display: block;
+    color: #858383;
+    font-family: var(--bs-body-font-family);
+    font-weight: 450;
+    position: absolute;
+    padding-top: 100px;
+    width: 25%;
+    transition: all .25s ease-out;   
+}
+
+/* Police d'ecriture pour annuler reservation */
+#annule p {
+    font-weight: 300px;
+    font-size: 15px;
+}
+
+/* Titre des services sur les cartes */
+h5.display-6.col-8.card-title {
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+/* Liste deroulante */
+#technicien {
+    width: 30%;
+    padding: 5px;
+    text-align: left;
+}
+
+/* Alignement des icones */
+.form-group .form-control-icon {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Duree grosseur police d'ecriture */
+p.display-6.col.card-text.mb-0 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* Centrer */
+.date {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Proprietees pour le groupe de boutons */
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: block;
+}
+
+/* Liste des services selectionnees */
+.serviceGroup .col-3, .col#tabServices {
+    padding: 0px;
+}
+
+/* Police d'ecriture de date et heure du rendez-vous affichee */
+.selectedDateTime {
+    font-size: 22px;
+    font-weight: 375;
+    line-height: 1.2;
+}
+
+/* Bordure des cellules de temps disponibles */
+.cell {
+    border: 1px solid #BDBDBD; 
+    margin: 2px;
+    cursor: pointer;
+}
+
+/* Hover d'un bouton de temps disponible */
+.cell:hover {
+    border: 1px solid #6F48A0;
+}
+
+/* Selection d'un bouton de temps disponible */
+.cell.select {
+    background-color: #6F48A0;
+    color: #fff;
+}
+
+/* Couleur du bouton selectionee dans le groupe de bouton  */
+.btn.services.select {
+    background-color: #9673C1;
+}
+
+/* Grandeur police d'ecriture services selectionees */
+.mx-auto.p-2.lead.border {
+    font-size: 16px;
+}
+
+/* Grandeur minimale */
+@media (min-width: 576px) {
+    /* Pour l'espacement des boutons */
+    .date {
+        max-width: 700px;
+    }
+
+    /* Pour l'espacement des boutons */
+    .infoPersonnelle {
+        max-width: 800px;
+    }
+}
+
+
+/****************************************
+PAGE DE CONTACT                         *
+****************************************/
+/* Style pour les inputs */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Titre des pages */
+#introEquipe h4.display-4, #introAbout h4.display-4, #introServices h4.display-4 {
+    color: white;
+}
+
+/* Section information */
+section#nosContact .opalInfo {
+    background-color: #FAFAF5 ;
+}
+
+/* Grandeur police d'eccriture de p */
+section#nosContact .opalInfo p {
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Set the width & frame of the map (address) */
+.col-md-12 iframe {
+    width:100%;
+    height: 100%;
+}
+
+/* Separateur */
+#hrContact {
+    border-top: 2px solid #c3bdbd;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+/* Grandeur de police d'ecriture h6 */
+#contactForm h6.display-6 {
+    font-size: calc(0.6rem + 1.5vw);
+    font-weight: 350;
+}
+
+
+/****************************************
+PAGE DE SERVICES                        *
+****************************************/
+/* Retire l'espace entre les lignes */
+.onglesArtificiels p {
+    margin-bottom: 0px;
+}
+
+/* Ajuste la taille de la police d'ecriture pour la description des services */
+p.lead.serviceDescription {
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+/* Espace entre la description et la prochaine ligne */
+#serviceManucure, #servicePedicure, #enfantServices {
+    margin-bottom: 5px;
+}
+
+
+
+/****************************************
+PAGE NOTRE EQUIPE                       *
+****************************************/
+/* Membres de l'equipe */
+#notreEquipe .row {
+    padding: 30px 60px;
+}
+
+
+
+/****************************************
+PAGE DE GALLERIE                        *
+****************************************/
+
+#pagination .page-link.select {
+    background-color: #6F48A0;
+    color: white;
+}
+
+#pagination .page-link {
+    color: #6F48A0;
+}
